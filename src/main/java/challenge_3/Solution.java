@@ -8,22 +8,21 @@ public class Solution {
         char[] charArray = input.toCharArray();
 
         Map<Character, Integer> visited = new HashMap<>();
-        List<StringBuffer> uniqueSubStrings = new ArrayList<>();
-        StringBuffer bestResult = new StringBuffer();
+        List<Integer> uniqueSubStringLengths = new ArrayList<>();
+        int bestLength = 0;
         for (int i = 0; i < charArray.length; i++) {
             char currentChar = charArray[i];
             if (!visited.containsKey(currentChar)) {
                 visited.put(currentChar, i);
-                bestResult.append(currentChar);
+                bestLength++;
             } else {
-                uniqueSubStrings.add(bestResult);
-                bestResult = new StringBuffer();
-                bestResult.append(currentChar);
+                uniqueSubStringLengths.add(bestLength);
+                bestLength = 1;
                 visited.clear();
                 visited.put(currentChar, i);
             }
         }
 
-        return uniqueSubStrings.stream().mapToInt(StringBuffer::length).max();
+        return uniqueSubStringLengths.stream().mapToInt(Integer::intValue).max();
     }
 }
