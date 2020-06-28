@@ -23,10 +23,10 @@ public class Solution {
                 int remainder = sum % 10;
 
                 result.add(remainder);
-            } else if (it1.hasNext() && !it2.hasNext()) {
+            } else if (it1.hasNext()) {
                 result.add(it1.next() + c);
                 c = 0;
-            } else if (!it1.hasNext() && it2.hasNext()) {
+            } else {
                 result.add(it2.next() + c);
                 c = 0;
             }

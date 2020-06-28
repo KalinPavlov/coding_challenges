@@ -17,7 +17,7 @@ public class SolutionTest {
             {RED,   BLUE,  BLUE, BLUE}
         };
 
-        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).get();
+        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).orElseThrow(AssertionError::new);
         Assert.assertEquals(BLUE, actual.getKey());
         Assert.assertEquals(5, (int) actual.getValue());
     }
@@ -33,7 +33,7 @@ public class SolutionTest {
                 {RED,   RED,   RED,   GREEN, GREEN, GREEN}
         };
 
-        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).get();
+        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).orElseThrow(AssertionError::new);
         Assert.assertEquals(GREEN, actual.getKey());
         Assert.assertEquals(16, (int) actual.getValue());
     }
@@ -48,7 +48,7 @@ public class SolutionTest {
                 {RED, RED,   RED,   RED,   RED,  RED}
         };
 
-        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).get();
+        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).orElseThrow(AssertionError::new);
         Assert.assertEquals(RED, actual.getKey());
         Assert.assertEquals(18, (int) actual.getValue());
     }
@@ -64,7 +64,7 @@ public class SolutionTest {
                 {RED,   RED,   RED,   GREEN, GREEN, GREEN}
         };
 
-        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).get();
+        Map.Entry<Color, Integer> actual = Solution.findMaxNumberOfConnectedColors(matrix).orElseThrow(AssertionError::new);
         Assert.assertEquals(BLUE, actual.getKey());
         Assert.assertEquals(16, (int) actual.getValue());
     }

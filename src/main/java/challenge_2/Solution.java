@@ -55,37 +55,6 @@ public class Solution {
         }
     }
 
-    public static void main(String[] args) {
-        Color[][] matrix = new Color[][]{
-                {GREEN, GREEN, BLUE,  RED,   RED,   RED},
-                {GREEN, GREEN, GREEN, GREEN, BLUE,  RED},
-                {RED,   BLUE,  GREEN, BLUE,  BLUE,  BLUE},
-                {GREEN, BLUE,  GREEN, BLUE,  BLUE,  BLUE},
-                {GREEN, GREEN, GREEN, GREEN, RED,   BLUE},
-                {RED,   RED,   RED,   GREEN, GREEN, GREEN}
-        };
-
-        Map<Color, Map<Pair, Pair>> visited = new HashMap<>();
-        visited.put(RED, new HashMap<>());
-        visited.put(GREEN, new HashMap<>());
-        visited.put(BLUE, new HashMap<>());
-
-        Map<Color, Integer> result = new HashMap<>();
-        result.put(RED, 0);
-        result.put(GREEN, 0);
-        result.put(BLUE, 0);
-
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                DFS(matrix, row, col, visited.get(matrix[row][col]));
-                setResultIfGreater(result, matrix[row][col], counter);
-                counter = 0;
-            }
-        }
-
-        System.out.println(result.entrySet().stream().max(Map.Entry.comparingByValue()).get());
-    }
-
     public static Optional<Map.Entry<Color, Integer>> findMaxNumberOfConnectedColors(Color[][] matrix) {
         Map<Color, Map<Pair, Pair>> visited = new HashMap<>();
         visited.put(RED, new HashMap<>());

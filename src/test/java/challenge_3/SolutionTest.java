@@ -9,7 +9,7 @@ public class SolutionTest {
     public void testLongestSubStringLenght() {
         String str = "abrkaabcdefghijjxxx";
 
-        int actual = Solution.findLongestSubstringNoDuplicateChars(str).getAsInt();
+        int actual = Solution.findLongestSubstringNoDuplicateChars(str).orElseThrow(AssertionError::new);
 
         Assert.assertEquals(10, actual);
     }

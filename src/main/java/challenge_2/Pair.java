@@ -3,8 +3,8 @@ package challenge_2;
 import java.util.Objects;
 
 public class Pair {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public Pair(int x, int y) {
         this.x = x;
