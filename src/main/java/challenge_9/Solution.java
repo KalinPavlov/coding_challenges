@@ -1,5 +1,6 @@
 package challenge_9;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -36,5 +37,9 @@ public class Solution {
         }
 
         return brackets.empty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString("123456".split("[0-9]")));
     }
 }
