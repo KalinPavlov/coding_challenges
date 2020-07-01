@@ -23,20 +23,22 @@ public class Solution {
 
     public static boolean isValid(String s) {
         final Stack<Character> brackets = new Stack<>();
-        for (char ch : s.toCharArray()) {
-            if (openingBrackets.contains(ch)) {
-                brackets.push(ch);
+        for (char ch : s.toCharArray()) { // n
+            if (openingBrackets.contains(ch)) { // 1
+                brackets.push(ch); // 1
             }
 
-            if (closingBrackets.contains(ch)) {
-                char openingBracket = brackets.pop();
-                if (!(getClosingFromOpeningBracket(openingBracket) == ch)) {
-                    return false;
+            if (closingBrackets.contains(ch)) { // 1
+                char openingBracket = brackets.pop(); // 1
+                if (!(getClosingFromOpeningBracket(openingBracket) == ch)) { // 1
+                    return false; // 1
                 }
             }
         }
 
-        return brackets.empty();
+        return brackets.empty(); // 1
+
+        // O(n)
     }
 
     public static void main(String[] args) {
