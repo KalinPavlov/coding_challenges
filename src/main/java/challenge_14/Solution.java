@@ -1,6 +1,6 @@
 package challenge_14;
 
-public class Solution {
+public class  Solution {
 
     public static boolean isNotDecreasing(int[] arr) {
         if (arr.length < 2) {
